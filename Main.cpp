@@ -1,6 +1,11 @@
 // Keira Vilaysing Coding 1 Spring 2026
 // This file is my first C++ Program
 
+// To compile, open the "developer Command Prompt for VS 2022"
+// navigate to this folder with 'cd' for 'change directory'
+// use the command 'cl /EHsc filename.cpp' (in this case, it's main.cpp)
+// and then type 'filename' to run the .exe this the "main"
+
 #include <iostream>  // This is an in out stream, for sending text to the console. 
 #include <string>   // For playerName
 
