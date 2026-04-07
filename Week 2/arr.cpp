@@ -95,7 +95,7 @@ int main() {
     // with only the values that we specify
     // they correspond to numbers, starting with 0 by default. 
     enum favor {LOVE, LIKE, DISLIKE, LOATHE}; 
-    enum difficulty {EASY, MEDIUM, HARD, IMPOSSIBLE}; // examples
+    enum difficulty {EASY, NORMAL, HARD, IMPOSSIBLE}; // examples
     enum shirtSize {EXTRA_SMALL, SMALL, MEDIUM, LARGE, EXTRA_LARGE}; // example
 
     switch(rand() % 4) { 
