@@ -33,10 +33,54 @@ int main() {
             // get line from player
             getline(cin, input);
             // pushback (input)
+            favGames.push_back(input);
 
+            cout << "Here are your games:\n";
+            for(int i = 0; i < favGames.size(); i++) {
+                cout << "\t" << favGames[i] << "\n";
+            } // end of add
         }
         // edit (change one of the names)
+        else if(input == "edit") {
             // show list, use iter to point to one to change it.
+            // build iter
+            vector<string>:: iterator iter;
+
+            cout << "Here are your favs:\n";
+            for(int i = 0; i < favGames.size(); i++) {
+                cout << "\t" << favGames[i] << "\n";
+            }
+            // Make iter point at the first element in the vector
+            iter = favGames.begin();
+
+            cout << "The iter is pointing at " << *iter << ".\n";
+            cout << "What game would you like to select?\n";
+            getline(cin, input);
+
+            // use find algorithm
+            iter = find(favGames.begin(), favGames.end(), input);
+            
+            if(iter != favGames.end()) {
+                cout << "We found " << *iter << ".\n";
+                cout << "Would you like to change this fav?\n";
+                getline(cin, input);
+
+                if(input == "yes"){
+                    cout << "What would you like to change this too?\n";
+                    getline(cin, input);
+
+                    *iter = input; //changing fav
+                }
+                cout << "Here are your updated games!\n";
+                for(int i = 0, i < favGames.size(), i++) {
+                cout << "\t" << favGames[i] << "\n"
+                }
+            }
+            else{
+                cout << "We couldn't find that name.\n";
+            }
+            
+        }
         // remove (removes name from list)
         // show (show the list, sorted)
         // quit (quit)

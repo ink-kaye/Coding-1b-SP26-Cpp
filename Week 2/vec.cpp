@@ -107,9 +107,9 @@ int main() {
 
                     *iter = input; // changing  the fav. 
                 }
-                 cout << "Here are your updated favs!\n";
-                 for(int i = 0; i < favs.size(); i++) {
-                cout << "    " << favs[i] << "\n";
+                cout << "Here are your updated favs!\n";
+                for(int i = 0; i < favs.size(); i++) {
+                    cout << "    " << favs[i] << "\n";
                 } 
             }
             else{
