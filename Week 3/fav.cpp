@@ -72,23 +72,54 @@ int main() {
                     *iter = input; //changing fav
                 }
                 cout << "Here are your updated games!\n";
-                for(int i = 0, i < favGames.size(), i++) {
-                cout << "\t" << favGames[i] << "\n"
+                for(int i = 0; i < favGames.size(); i++) {
+                    cout << "\t" << favGames[i] << "\n";
                 }
             }
             else{
                 cout << "We couldn't find that name.\n";
             }
-            
         }
         // remove (removes name from list)
+        else if(input == "remove") {
+            cout << "Here are your games!\n";
+            for(int i = 0; i < favGames.size(); i++) {
+              cout << "\t" << favGames[i] << "\n";
+            }
+            
+            cout << "What game would you like to remove from the list?\n";
+            getline(cin, input);
+
+            auto iter = find(favGames.begin(), favGames.end(), input);
+
+            if(iter != favGames.end()) {
+                cout << "We've found that name. Removing now.\n";
+                favGames.erase(iter);   // remove the element the iter is pointing at.
+            }
+            cout << "Here are your games!\n";
+            for(int i = 0; i < favGames.size(); i++) {
+              cout << "\t" << favGames[i] << "\n";
+            }
+        }   //end remove
         // show (show the list, sorted)
+        else if(input == "show") {
+            sort(favGames.begin(), favGames.end());
+
+            cout << "Here are your games!\n";
+            for(int i = 0; i < favGames.size(); i++) {
+              cout << "\t" << favGames[i] << "\n";
+            }
+        }
         // quit (quit)
-
-
-
-
-
+        else if (input == "quit") {
+            cout << "Thanks for playing!\n";
+            break;
+        } // end of quit
+        else {
+            cout << "I didn't recognize that command.\n";
+        }    
     } while(true);  // end of while loop
+
+    return 0;
 
 }
