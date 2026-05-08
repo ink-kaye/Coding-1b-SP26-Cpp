@@ -89,7 +89,7 @@ public:
         if (hunger < 5)
             cout << "Satisfied";
         else if (hunger < 10)
-            cout << "getting hungry...";
+            cout << "not battling or training soon... >:(!";
         else if (hunger < 15)
             cout << "not battling or training!";
         else
@@ -247,9 +247,7 @@ int main() {
             // subtract from hunger
             nereid.setHunger(nereid.getHunger() + 1);
         }
-        else if (nereid.getHunger() >= 10){
-            cout << "IM too hungry to train" << endl;
-        }
+
         // feed elemental
         else if (input == "feed")  {
             cout << "You're feeding your elemental!\n";
