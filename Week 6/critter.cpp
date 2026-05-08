@@ -16,7 +16,7 @@ vector<string> names;
 
 class baseElemental {
 public:     
-// private:
+//private:
     // base stats for the creatures. 
     string name;
     int health;
@@ -27,7 +27,7 @@ public:
 
 public:
     // constructor
-
+    // baseElemental() = default;
     baseElemental(string givenName, int givenHealth, int givenHunger, int givenDamage, string givenElement = "Random") {
         name = givenName;
         health = givenHealth;
@@ -117,6 +117,32 @@ public:
 
 };
 
+class bossElemental : public baseElemental {
+public: 
+    int damageMultiplier = 5;
+
+    // // constructor for boss
+    // bossElemental() {
+    //     name = "Overlord";
+    //     damage = damage * damageMultiplier; 
+    // }
+
+      // default
+    bossElemental()
+        : baseElemental("Overlord", 40, 2, 5)
+    {
+        damage *= damageMultiplier;
+    }
+
+    // custom 
+    bossElemental(string givenName, int givenHealth, int givenHunger, int givenDamage)
+        : baseElemental(givenName, givenHealth, givenHunger, givenDamage)
+    {
+        damage *= damageMultiplier;
+    }
+   
+};
+
 void read(vector<string>& vec, string path = "names.txt") {
     string line;
     ifstream readFile(path);
@@ -190,13 +216,15 @@ int main() {
         else if(input == "battle") {
             // another loop
             while(true) {
+                // create a boss elemental
+                bossElemental overlord("Overlord", 40, 2, 5);
                 
-            }
-            // create a boss elemental
-            // battle others
+                // battle others
                 // attack
                 // heal
+                // max of 5 heals
                 // run away
+            }
         }
         else {
             cout << "Your Elemental doesn't understand.\n";
